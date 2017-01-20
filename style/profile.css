@@ -1,3 +1,7 @@
+*{
+	padding: 0px;
+	margin: 0px;
+}
 #main{
 	padding-top: 20px;
 }
@@ -7,6 +11,8 @@
 	clear: left;
 	margin-left: 2%;
 	margin-right: 2%;
+	size: 350px;
+	
 }
 
 #prof2{
@@ -52,4 +58,14 @@
 }
 .connect button{
 	margin-left: 30%;
+}
+#left{
+	width: 30%;
+	clear: left;
+	float: left;
+	
+}
+#right{
+	width: 30%;
+	float: left;
 }
