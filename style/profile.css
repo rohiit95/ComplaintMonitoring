@@ -59,13 +59,14 @@
 .connect button{
 	margin-left: 30%;
 }
-#left{
-	width: 30%;
+.left{
+	width: 40%;
 	clear: left;
 	float: left;
 	
 }
-#right{
-	width: 30%;
+.right{
+	width: 60%;
 	float: left;
+	clear: right;
 }
