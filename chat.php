@@ -1,109 +1,62 @@
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-     <link rel="stylesheet" href="chat.css" type="text/css">
-     <script src="chat.js" type="text/javascript"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+	
+        <link href="css/bootstrap.css" rel="stylesheet">
 </head>
+
 <body>
 
 <div class="container">
-    <div class="row chat-window col-xs-5 col-md-3" id="chat_window_1" style="margin-left:10px;">
-        <div class="col-xs-12 col-md-12">
-        	<div class="panel panel-default">
-                <div class="panel-heading top-bar">
-                    <div class="col-md-8 col-xs-8">
-                        <h3 class="panel-title"><span class="glyphicon glyphicon-comment"></span> Chat - Miguel</h3>
-                    </div>
-                    <div class="col-md-4 col-xs-4" style="text-align: right;">
-                        <a href="#"><span id="minim_chat_window" class="glyphicon glyphicon-minus icon_minim"></span></a>
-                        <a href="#"><span class="glyphicon glyphicon-remove icon_close" data-id="chat_window_1"></span></a>
+    <div class="row">
+        <div class="col-md-5">
+            <div class="panel panel-primary">
+                <div class="panel-heading" id="accordion">
+                    <span class="glyphicon glyphicon-comment"></span> Chat
+                    <div class="btn-group pull-right">
+                        <a type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                            <span class="glyphicon glyphicon-chevron-down"></span>
+                        </a>
                     </div>
                 </div>
-                <div class="panel-body msg_container_base">
-                    <div class="row msg_container base_sent">
-                        <div class="col-md-10 col-xs-10">
-                            <div class="messages msg_sent">
-                                <p>that mongodb thing looks good, huh?
-                                tiny master db, and huge document store</p>
-                                <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
+            <div class="panel-collapse collapse" id="collapseOne">
+                <div class="panel-body">
+                    <ul class="chat">
+                    
+                        <li class="left clearfix " id="firstchat">
+                            <div class="chat-body clearfix hide">
+                                <div class="header">
+                                    <strong class="primary-font">Jack Sparrow</strong> <small class="pull-right text-muted">
+                                </div>
+                                <p>
+                                </p>
                             </div>
-                        </div>
-                        <div class="col-md-2 col-xs-2 avatar">
-                            <img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg" class=" img-responsive ">
-                        </div>
-                    </div>
-                    <div class="row msg_container base_receive">
-                        <div class="col-md-2 col-xs-2 avatar">
-                            <img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg" class=" img-responsive ">
-                        </div>
-                        <div class="col-md-10 col-xs-10">
-                            <div class="messages msg_receive">
-                                <p>that mongodb thing looks good, huh?
-                                tiny master db, and huge document store</p>
-                                <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row msg_container base_receive">
-                        <div class="col-md-2 col-xs-2 avatar">
-                            <img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg" class=" img-responsive ">
-                        </div>
-                        <div class="col-xs-10 col-md-10">
-                            <div class="messages msg_receive">
-                                <p>that mongodb thing looks good, huh?
-                                tiny master db, and huge document store</p>
-                                <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row msg_container base_sent">
-                        <div class="col-xs-10 col-md-10">
-                            <div class="messages msg_sent">
-                                <p>that mongodb thing looks good, huh?
-                                tiny master db, and huge document store</p>
-                                <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
-                            </div>
-                        </div>
-                        <div class="col-md-2 col-xs-2 avatar">
-                            <img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg" class=" img-responsive ">
-                        </div>
-                    </div>
-                    <div class="row msg_container base_receive">
-                        <div class="col-md-2 col-xs-2 avatar">
-                            <img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg" class=" img-responsive ">
-                        </div>
-                        <div class="col-xs-10 col-md-10">
-                            <div class="messages msg_receive">
-                                <p>that mongodb thing looks good, huh?
-                                tiny master db, and huge document store</p>
-                                <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row msg_container base_sent">
-                        <div class="col-md-10 col-xs-10 ">
-                            <div class="messages msg_sent">
-                                <p>that mongodb thing looks good, huh?
-                                tiny master db, and huge document store</p>
-                                <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
-                            </div>
-                        </div>
-                        <div class="col-md-2 col-xs-2 avatar">
-                            <img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg" class=" img-responsive ">
-                        </div>
-                    </div>
+                        </li>
+                        
+                    </ul>
                 </div>
                 <div class="panel-footer">
                     <div class="input-group">
-                        <input id="btn-input" type="text" class="form-control input-sm chat_input" placeholder="Write your message here..." />
+                        <input id="btn-input" type="text" value="" class="form-control input-sm" placeholder="Type your message here..." />
                         <span class="input-group-btn">
-                        <button class="btn btn-primary btn-sm" id="btn-chat">Send</button>
+                            <button class="btn btn-warning btn-sm" id="btn-chat">
+                                Send</button>
                         </span>
                     </div>
                 </div>
-    		</div>
+            </div>
+            </div>
         </div>
     </div>
-    
 </div>
+
+
+     <script src="js/jquery-1.9.1.min.js"></script>
+     <script>window.jQuery || document.write('<script src="js/jquery-1.9.1.min.js"><\/script>')</script>
+     <script src="js/bootstrap.min.js"></script>
+      <script src="chat.js"></script>
+
 </body>
 </html>

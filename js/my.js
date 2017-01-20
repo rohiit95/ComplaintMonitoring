@@ -42,27 +42,17 @@ var str;
 	  }
 	  
 	  //the subscribe function
-	  if($(location).attr('pathname').indexOf("index")!=-1 && $(location).attr('href').indexOf("#1")!=-1){
-		$('.distance').addClass('hide');
-		$('.section-white').css("margin-top","100px");
-		 $('.clubicons').text("Subscribe");
-		 $('.clubicons').attr("href","");
-		 $('.section-title h1').text("Subscribe Your Interest");  
-		 $('#subscribeli').addClass("active"); 
-		 $('#homeli').removeClass("active");
-		 
-	  }
-	  $("#subscribeli").click(function(event){
+	  $("#myprofileli").click(function(event){
 		  event.preventDefault();
 		 $('.distance').addClass('hide');
 		$('.section-white').css("margin-top","100px");
 		 $('.clubicons').text("Subscribe");
 		 $('.clubicons').attr("href","#");
 		 $('.section-title h1').text("Subscribe Your Interest"); 
-		  $('#subscribeli').addClass("active");
+		  $('#myprofileli').addClass("active");
 		   $('#homeli').removeClass("active");
 		   
-		 window.location="index.php"+pstr+"#1"; 
+		 window.location="profile.php"+pstr;
 	  });
 	  
 	  
@@ -282,7 +272,7 @@ $('.input-modal-pass').on("focus",function(event){
 				$.post("login.php",{username3:$("#username3").val(),
 											password3:$("#password3").val()
 											}, function(data){
-												/*if(data!="fail"){
+											   if(data!="fail"){
 													$("#modal3").modal('hide');
 													//gdata=data;
 													var tempurl=$(location).attr('pathname');
@@ -294,7 +284,7 @@ $('.input-modal-pass').on("focus",function(event){
 													$('.modal-content .modal-msg3').append("ERROR : Invalid username or password");
 													            $('#password3').addClass("modal-error");
 			                                                    $('#username3').addClass("modal-error");
-												}*/
+												}
 											});
 			   
 		}

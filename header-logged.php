@@ -14,7 +14,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li class="active" id="homeli"><a href="index.php">Home</a></li>
                     
-                    <li id="subscribeli"><a href="index.php"><strong>Subscribe</strong></a></li>
+                    <li id="myprofileli"><a href="profile.php"><strong>My Profile</strong></a></li>
                     
                     <li  id="signoutli"><a href="index.php"><strong>Sign Out</strong></a></li>
                     <li id="userli" style="font-style:italic;" > </li>

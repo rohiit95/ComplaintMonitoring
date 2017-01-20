@@ -81,9 +81,6 @@ session_start();
 	if(isset($_SESSION['user_name'])){
 		require("header-logged.php");
 	}
-	else if(isset($_SESSION['club_name'])){
-		require("header-admin.php");
-	}
 	else{
 	require("header.php") ;
 	}

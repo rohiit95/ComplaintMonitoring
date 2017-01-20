@@ -1,8 +1,26 @@
+
+
+
+
+
+
 <html>
     <head>
         <title>UserName</title>
         <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        
+            <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <!-- CSS -->
+	<link rel="stylesheet" href="css/main.css">
+    <link href="css/custom.css" rel="stylesheet">
+
+
+        
+        
+        
+        
         <link rel="stylesheet" href="style/addAccordion.css">
         <link rel="stylesheet" href="style/profile.css" type="text/css">
         <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
@@ -19,7 +37,12 @@
         });</script>
     </head>
     <body>
-        
+        <?php
+require("header-logged.php");
+?>
+            
+
+            
             
         <div id="main">
             <div id="prof1">
@@ -61,11 +84,20 @@
                 </div>
             </div>
             <div id="video">
-                <button id="X" onclick=""> X</button>
+                <button id="X" onClick=""> X</button>
                 <iframe src="https://appear.in/vishaltahlan" width=700" height="600" frameborder="0"></iframe>
             </div>
            </div>
 
         
+        <?php require("footer.php") ?>
+        	            <!-- Javascripts -->
+     <script src="js/jquery-1.9.1.min.js"></script>
+     <script>window.jQuery || document.write('<script src="js/jquery-1.9.1.min.js"><\/script>')</script>
+     <script src="js/bootstrap.min.js"></script>
+	 <script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>	
+		<!-- my jquery file -->
+	 <script src="js/my.js"></script>	
+           <script src="chat.js"></script>
     </body>
 </html>
