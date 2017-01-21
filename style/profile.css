@@ -38,6 +38,21 @@ body{
 	margin: 10%;
 	margin-top: 0px;
 }
+#chatbox{
+	clear: left;
+	position: fixed;
+	margin-left: 5px;
+	width:38%;
+	padding: 10px;
+	
+	display: none;
+	float: left;
+}
+
+#Xx{
+	width:20px;
+	float: right;
+}
 #details{
 	width:80%;
 	margin-left: 10%;
@@ -80,3 +95,6 @@ body{
 	float: left;
 	clear: right;
 }
+/*.input-group{
+	width:90%;
+}*/
