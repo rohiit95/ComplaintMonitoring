@@ -11,6 +11,7 @@
             </div>
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
+                <li class="fire" id="logfirst"><a href="#" data-toggle="modal" data-target="#modal3">Lodge a Complaint</a></li>
                     <li  id="homeli"><a href="index.php"><strong>Home</strong></a></li>
                    
                     <li id="signupli"><a href="#" data-toggle="modal" data-target="#modal1">Sign Up</a></li>

@@ -1,4 +1,11 @@
 <html>
+<head>
+	<style type="text/css">
+		body{
+			background-image: url("images/success.jpg");
+			background-repeat:  no-repeat;}
+	</style>
+</head>
 	
 	<body>
 	<?php
