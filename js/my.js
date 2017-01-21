@@ -101,7 +101,13 @@ var str;
 		 });
 
 
-var htmlprofile= " <div role='header' class='complain'><div class='left'><h3></h3></div><div class='right'>Complaint No :<span class='id'>  </span><br />Date :<span class='date'></span></div></div><div role='content' class='content'><span style='font-weight:bold'>Location :   </span><span class='location'></span><br /><br /><h5 style='font-weight:bold; font-size:1.2em; '>Description : </h5><p class='describe'></p><div class='connect'><button class='chat' value=''>Chat with Officer</button><button class='call'>Video-Call Officer</button></div></div>";
+var htmlprofile= " <div role='header' class='complain'><div class='left'><h3></h3></div><div class='right'>Complaint No :<span class='id'>  </span><br />Date :<span class='date'></span></div></div><div role='content' class='content'><span style='font-weight:bold'>Location :   </span><span class='location'></span><br /><br /><h5 style='font-weight:bold; font-size:1.2em; '>Description : </h5><p class='describe'></p><div class='connect'><a href="chat.php" 
+
+target="blank"><button  class="chat" value="">Chat with 
+
+Officer</button></a><a href="video.php" target="blank"><button 
+
+class="call">Video-Call Officer</button></a></div></div>";
 
 	  	 	 $.getJSON('profile-loader2.php',{user_id:str},function (json) {
             	 var len=json.length-1; 

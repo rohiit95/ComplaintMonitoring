@@ -63,17 +63,14 @@ require("header-logged.php");
                         <br /><br />
                         <h5 style="font-weight:bold; font-size:1.2em;   ">Description : </h5>
                         <p class="describe">I lost my Sansung Galaxy Note 3. The EMEI no was EDJEF5W65HJ.  </p>
-                        <div class="connect"><button class="chat" value="">Chat with Officer</button><button class="call">Video-Call Officer</button></div> 
+                        <div class="connect"><a href="chat.php" target="blank"><button  class="chat" value="">Chat with Officer</button></a><a href="video.php" target="blank"><button class="call">Video-Call Officer</button></a></div> 
                   </div>
                   
                   
                 </div>     
                 
             </div>
-            <div id="video">
-                <button id="X" onClick=""> X</button>
-                <iframe src="https://appear.in/vishaltahlan" width=700" height="600" frameborder="0"></iframe>
-            </div>
+            
             <div id="chatbox"> 
                   <?php
                     require("chat1.php");
@@ -93,10 +90,10 @@ require("header-logged.php");
            <script src="js\chat.js"></script>
 <script > 
         $(document).ready(function(){
-            $(".call").click(function(){
+            $(".calls").click(function(){
                 $("#video").slideToggle("fast");
             }); 
-            $(".chat").click(function(){
+            $(".chats").click(function(){
                 $("#chatbox").slideToggle("fast");
             }); 
              $("#X").click(function(){
