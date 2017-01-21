@@ -87,7 +87,7 @@ if ($conn->query($sql) === TRUE) {
 }
 
 $conn->close();
-header('Location: confirmation.php');
+header('Location: confirmation.php?num='. urlencode(serialize($num)));
 }
 function test_input($data) {
   $data = trim($data);
