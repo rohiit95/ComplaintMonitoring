@@ -31,7 +31,8 @@ session_start();
         color: #303030;
       }
       #address {
-
+        border: 1px solid #000090;
+        background-color: #f0f0ff;
         width: 480px;
         padding-right: 2px;
       }
@@ -39,7 +40,7 @@ session_start();
         font-size: 10pt;
       }
       .field {
-        width: 90%;
+        width: 99%;
       }
       .slimField {
         width: 80px;
@@ -49,9 +50,7 @@ session_start();
       }
       #locationField {
         height: 20px;
-        margin-bottom: 50px;
-		text-align:center;
-		padding-left:10px;
+        margin-bottom: 2px;
       }
     </style>
 
@@ -95,7 +94,7 @@ session_start();
 					<div class="col-sm-6 leftwala container">
                     
                 <img class="img-responsive img-rounded current "  id="i1"  src="">
-                <h2  ></h2>
+                <h2>  </h2>
             
               
                     
@@ -109,8 +108,8 @@ session_start();
 	        					<div class="date" id="date1"> </div>
 								
 	        					<div class="intro" id="intro1"> 
-									<h4> Baby among three dead after driver 'deliberately' mows down pedestrians in Kolkata, wounding dozens </h4> 
-									<a href="img/news/no1.jpg">Read more...</a>
+									<h4> Baby among three dead after driver mows down pedestrians in Kolkata, wounding dozens </h4> 
+									<a href="detail1.php">Read more...</a>
 								</div>
 	        				</div>
 	        			</div>
@@ -120,8 +119,8 @@ session_start();
 	        					<div class="caption" id="caption2"><a href="img/news/no2.jpg"> </a></div>
 	        					<div class="date" id="date2"> </div>
 	        					<div class="intro" id="intro2"> 
-									<h4> Drug lord 'El Chapo' lands in Kolkata after extradition from Mexico, to face judge Friday </h4>
-									<a href="img/news/no2.jpg">Read more...</a>
+									<h4> Drug lord 'El Chapo' lands in Kolkata after extradition from Bangladesh, to face judge Friday </h4>
+									<a href="detail2.php">Read more...</a>
 								</div>
 	        				</div>
 	        			</div>
@@ -131,8 +130,8 @@ session_start();
 	        					<div class="caption" id="caption3"><a href="img/news/no3.jpg"> </a></div>
 	        					<div class="date" id="date3"> </div>
 	        					<div class="intro" id="intro3">
-									<h4> Kolkata man charged with abduction after dragging children's mother from store </h4>
-									<a href="img/news/no3.jpg">Read more...</a>
+									<h4> Biker's gang thrashes youth, cops sit on FIR </h4>
+									<a href="detail3.php">Read more...</a>
 								</div>
 	        				</div>
 	        			</div>
@@ -171,7 +170,7 @@ session_start();
         <td class="wideField" colspan="2"><input class="field" id="route"
               disabled="true"></input></td>
       </tr>
-      <tr class="hide">
+      <tr>
         <td class="label">City</td>
         <!-- Note: Selection of address components in this example is typical.
              You may need to adjust it for the locations relevant to your app. See
@@ -180,7 +179,7 @@ session_start();
         <td class="wideField" colspan="3"><input class="field" id="locality"
               disabled="true"></input></td>
       </tr>
-      <tr class="hide">
+      <tr>
         <td class="label">State</td>
         <td class="slimField"><input class="field"
               id="administrative_area_level_1" disabled="true"></input></td>
@@ -205,7 +204,7 @@ session_start();
 						<figcaption>
 							<h3>Garia</h3>
 							<span>Garia</span>
-							<a  class="clubicons" value="garia" href="police_station.php">Take a look</a>
+							<a  class="clubicons" value="garia" href="club.php">Take a look</a>
 						</figcaption>
 					</figure>
 	        	</div>	
@@ -217,7 +216,7 @@ session_start();
 						<figcaption>
 							<h3>Jadavpur</h3>
 							<span>Jadavpur</span>
-							<a  class="clubicons" value="jadavpur" href="police_station.php">Take a look</a>
+							<a  class="clubicons" value="jadavpur" href="club.php">Take a look</a>
 						</figcaption>
 					</figure>
 				</div>
@@ -228,7 +227,7 @@ session_start();
 						<figcaption>
 							<h3>Shyampukur</h3>
 							<span>Shyampukur</span>
-							<a  class="clubicons" value="shyampukur" href="police_station.php">Take a look</a>
+							<a  class="clubicons" value="shyampukur" href="club.php">Take a look</a>
 						</figcaption>
 					</figure>
 				</div>
@@ -240,7 +239,7 @@ session_start();
 						<figcaption>
 							<h3>Jorabagan</h3>
 							<span>Jorabagan</span>
-							<a  class="clubicons" value="jorabagan" href="police_station.php">Take a look</a>
+							<a  class="clubicons" value="jorabagan" href="club.php">Take a look</a>
 						</figcaption>
 					</figure>
 				</div>
@@ -252,7 +251,7 @@ session_start();
 						<figcaption>
 							<h3>Amherst</h3>
 							<span>Amherst</span>
-							<a  class="clubicons" value="amherst" href="police_station.php">Take a look</a>
+							<a  class="clubicons" value="amherst" href="club.php">Take a look</a>
 						</figcaption>
 					</figure>
 				</div>
@@ -264,7 +263,7 @@ session_start();
 						<figcaption>
 							<h3>Gariahat</h3>
 							<span>Gariahat</span>
-							<a  class="clubicons" value="gariahat" href="police_station.php">Take a look</a>
+							<a  class="clubicons" value="gariahat" href="club.php">Take a look</a>
 						</figcaption>
 					</figure>
 				</div>

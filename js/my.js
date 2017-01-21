@@ -19,6 +19,41 @@ var str;
 	 if($('#userli').text()==str){
 		 userli=1;
 	 }
+	
+	//to load latest news
+					
+				var src0="img/news/no1.jpg";
+				var src1="img/news/no2.jpg";
+				var src2="img/news/no3.jpg";
+				var arr=[src0,src1,src2];
+				var count=0;
+				var textarr=["Baby among three dead after driver mows down pedestrians in Kolkata, wounding dozens", "Drug lord 'El Chapo' lands in Kolkata after extradition from Bangladesh, to face judge Friday", "Biker's gang thrashes youth, cops sit on FIR"];
+				function rotator(){
+					var index;
+					index=count%3;
+					count++;
+					/*
+					if(count%4==0){
+						index=1;
+						count++;count++;
+					}
+					else{
+						index=count%4;
+						count++;	
+					}
+					*/
+					$('.leftwala h2').text(textarr[index]);
+					$('#i1').fadeIn(1000);
+					$('#i1').attr("src",arr[index]);
+					$('.leftwala h2').fadeIn(1000);
+					$('#i1').delay(4200);
+					$('.leftwala h2').delay(4200);
+					$('#i1').fadeOut(1000);
+					$('.leftwala h2').fadeOut(1000);
+				}				
+				rotator();
+				setInterval(function(){rotator()},6200);
+	
 
 	  
 	  	 //to load the detailpage
