@@ -1,9 +1,3 @@
-
-
-
-
-
-
 <html>
     <head>
         <title>UserName</title>
@@ -11,18 +5,20 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         
             <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/bootstrap.css" rel="stylesheet">
     <!-- CSS -->
-	<link rel="stylesheet" href="css/main.css">
-    <link href="css/custom.css" rel="stylesheet">
-
-
-        
-        
+	       <link rel="stylesheet" href="css/main.css">
+         <link rel="stylesheet" href="css/custom.css">
+       
+          
         
         
         <link rel="stylesheet" href="style/addAccordion.css">
         <link rel="stylesheet" href="style/profile.css" type="text/css">
+         
+
+        <script src="js/bootstrap.min.js"></script>
+      <script src="js/chat.js"></script>
         <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
         <script src="js/addAccordion.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -31,8 +27,14 @@
             $(".call").click(function(){
                 $("#video").slideToggle("fast");
             }); 
+            $(".chat").click(function(){
+                $("#chatbox").slideToggle("fast");
+            }); 
              $("#X").click(function(){
                 $("#video").slideToggle("fast");
+            });    
+            $("#Xx").click(function(){
+                $("#chatbox").slideToggle("fast");
             });     
         });</script>
     </head>
@@ -56,22 +58,13 @@ require("header-logged.php");
             <div id="prof2">
 
                 <div data-addui='accordion' data-change="hover">
-
                   <div role='header'>
                         <div class="left">Rape Complaint</div>
                         <div class="right"><b>Complaint No-</b> #gs4548reg4 <br><b>Date-</b>25/01/2017</div>
                   </div>
                   <div role='content'>
                         <p>Name- fjenkfw<br> Location- rggrnjnr<br>gwgugafuw<br>.ehfgejb<br></p>
-                        <div class="connect"><button value="">Chat with Officer</button><button class="call">Video-Call Officer</button></div> 
-                  </div>
-                  <div role='header'>
-                        <div class="left">Rape Complaint</div>
-                        <div class="right"><b>Complaint No-</b> #gs4548reg4 <br><b>Date-</b>25/01/2017</div>
-                  </div>
-                  <div role='content'>
-                        <p>Name- fjenkfw<br> Location- rggrnjnr<br>gwgugafuw<br>.ehfgejb<br></p>
-                        <div class="connect"><button value="">Chat with Officer</button><button class="call">Video-Call Officer</button></div> 
+                        <div class="connect"><button class="chat" value="">Chat with Officer</button><button class="call">Video-Call Officer</button></div> 
                   </div>
                   <div role='header'>
                         <div class="left">Rape Complaint</div>
@@ -79,13 +72,26 @@ require("header-logged.php");
                   </div>
                   <div role='content'>
                         <p>Name- fjenkfw<br> Location- rggrnjnr<br>gwgugafuw<br>.ehfgejb<br></p>
-                        <div class="connect"><button value="">Chat with Officer</button><button class="call">Video-Call Officer</button></div> 
+                        <div class="connect"><button class="chat">Chat with Officer</button><button class="call">Video-Call Officer</button></div> 
+                  </div>
+                  <div role='header'>
+                        <div class="left">Rape Complaint</div>
+                        <div class="right"><b>Complaint No-</b> #gs4548reg4 <br><b>Date-</b>25/01/2017</div>
+                  </div>
+                  <div role='content'>
+                        <p>Name- fjenkfw<br> Location- rggrnjnr<br>gwgugafuw<br>.ehfgejb<br></p>
+                        <div class="connect"><button class="chat">Chat with Officer</button><button class="call">Video-Call Officer</button></div> 
                   </div>
                 </div>
             </div>
             <div id="video">
                 <button id="X" onClick=""> X</button>
                 <iframe src="https://appear.in/vishaltahlan" width=700" height="600" frameborder="0"></iframe>
+            </div>
+            <div id="chatbox"> 
+                  <?php
+                    require("chat.php");
+                  ?>
             </div>
            </div>
 
@@ -99,5 +105,6 @@ require("header-logged.php");
 		<!-- my jquery file -->
 	 <script src="js/my.js"></script>	
            <script src="chat.js"></script>
+
     </body>
 </html>
