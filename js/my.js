@@ -95,7 +95,8 @@ var str;
 				$("#detailsprofile h4").text(json.address);
 				$('#detailsprofile p:first').text(json.adhar);
 				$('#detailsprofile p:last').text(json.contact);
-				alert(str);
+				
+				
                $('#prof1 img').attr("src","img/profile/"+str+"."+"jpg");
 			   	
 		 });
@@ -105,7 +106,7 @@ var htmlprofile= " <div role='header' class='complain'><div class='left'><h3></h
 
 	  	 	 $.getJSON('profile-loader2.php',{user_id:str},function (json) {
             	 var len=json.length-1; 
-				 alert(json[1].heading);
+				 //alert(json[1].heading);
 	             for(i=1;i<=len;i++){
 					 $('.accordi:last').append(htmlprofile);
 					 $(".left h3:last").text(json[i].heading);

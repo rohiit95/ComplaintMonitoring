@@ -146,22 +146,14 @@ session_start();
 		<!-- Our Portfolio -->	
 
         <div class="section section-white ">
-	        <div class="container">
-	        	<div class="row">
-                
-                
-	
-				<div class="section-title col-lg-6 col-md-6" style="margin-top:30px;" align="center" >
-				<h1>BEST PERFORMERS</h1>
-                <h3 style="margin-top:20px;">Enter Your Location </h3>
-                <h3></h3>
-                
-                    <div id="locationField">
+                     <div style="margin-left:130px;"> <h3 style="margin-bottom=0;">Enter Your Location </h3>
+                <h3></h3>                  
+                    <div id="locationField" style="width:300px; margin-left=30px;">
       <input id="autocomplete" placeholder="Enter your Location"
              onFocus="geolocate()" type="text"></input>
     </div>
-
-    <table id="address" class="hide">
+    </div>
+        <table id="address" class="hide">
       <tr class="hide">
         <td class="label">Street address</td>
         <td class="slimField"><input class="field" id="street_number"
@@ -192,6 +184,22 @@ session_start();
               id="country" disabled="true"></input></td>
       </tr>
     </table>
+        
+        
+        
+        
+        
+	        <div class="container">
+	        	<div class="row">
+                
+                
+	
+				<div class="section-title col-lg-6 col-md-6" style="margin-top:30px;" align="center" >
+				<h1 style="padding-top:40px;">BEST PERFORMERS</h1>
+
+
+
+    
 				</div>
 	
         
