@@ -12,6 +12,7 @@
             </div>
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
+                <li class="fir" id="lodge"><a href="fir.php"><em><strong>Lodge a Complaint</strong></em></a></li> 
                     <li class="active" id="homeli"><a href="index.php">Home</a></li>
                     
                     <li id="myprofileli"><a href="profile.php"><strong>My Profile</strong></a></li>
