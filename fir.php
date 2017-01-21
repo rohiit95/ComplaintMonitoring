@@ -27,20 +27,76 @@
 <body>
 
 <?php
+
+require('fpdf/fpdf.php');
+$pdf = new FPDF();
+$pdf->AddFont('freesans', '', 'times.php', true);
+$pdf->SetFont('freesans', '', 12);
+
+$pdf->SetTitle('My title');
+$pdf->SetAuthor('My author');
+$pdf->SetDisplayMode('fullpage', 'single');
+
+$pdf->SetLeftMargin(20);
+$pdf->SetRightMargin(20);
+$pdf->AddPage();
+
 // define variables and set to empty values
-$name = $email = $gender = $comment = $website = "";
+
+
+$cur_date = date('m/d/Y');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $name = test_input($_POST["name"]);
-  $email = test_input($_POST["email"]);
+  $num=substr(str_shuffle('ABCDEFGHIJKLMNOPPQRSTUVWXYZ'),0,5);
+  $num1=substr(str_shuffle('0123456789'),0,3);
+  $num=$num.'_'.$num1;
+  $pdf->Write(5, "Complaint_ID: $num"); //write
+    $pdf->Ln(10);
+  foreach ($_POST as $key =>$data)
+{
+    if($key=='field13'||$key=='field4'||$key=='submit')
+        continue;
+    $pdf->Write(5, "$key: $data"); //write
+    $pdf->Ln(10); // new line
+}
+$path_to_file = 'reports/'.(string)$num.'.pdf';
+$pdf->Output($path_to_file,'F');
+  $name = test_input($_POST["Name"]);
+  $mobile = $_POST["Mobile"];
+  $rdate = $_POST["Reporting_Date"];
+  $idate = $_POST["Incident_Date"];
+  $email = test_input($_POST["Email"]);
+  $servername = "localhost";
+  $topic=$_POST['Topic'];
+  $location=$_POST['Location'];
+$username = "root";
+$password = "";
+$dbname = "complaint_monitor";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+$data = $conn->real_escape_string(file_get_contents($path_to_file));
+$sql = "INSERT INTO complaint (Complaint_ID,Category,Reporting_Date,Incident_Date,Location,Name,Mobile_Number,Email,Report)
+VALUES ('$num','$topic',STR_TO_DATE('$rdate', '%m/%d/%Y'),STR_TO_DATE('$idate', '%m/%d/%Y'),'$location','$name',$mobile,'$email','$data')";
+if ($conn->query($sql) === TRUE) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
 }
 
+$conn->close();
+header('Location: confirmation.php');
+}
 function test_input($data) {
   $data = trim($data);
   $data = stripslashes($data);
   $data = htmlspecialchars($data);
   return $data;
 }
+
+
 ?>
     
     <div class="container-fluid">
@@ -72,37 +128,37 @@ function test_input($data) {
 			    <label class="control-label control-label-left col-sm-3" for="field35">Reporting Date<span class="req"> *</span></label>
 			    <div class="controls col-sm-9">
                     
-                <span class="k-widget k-datepicker k-header form-control"><span class="k-picker-wrap k-state-default"><input id="field35" type="text" class="form-control k-input" data-role="date" role="textbox" aria-haspopup="true" aria-expanded="false" aria-owns="field35_dateview" aria-disabled="false" aria-readonly="false" aria-label="Current focused date is null" data-error-container="#errfield35" style="width: 100%;" required="required" name="rdate" data-parsley-errors-container="#errId1"><span unselectable="on" class="k-select" role="button" aria-controls="field35_dateview"><span unselectable="on" class="k-icon k-i-calendar">select</span></span></span></span><span id="errId1" class="error"></span></div>
+                <span class="k-widget k-datepicker k-header form-control"><span class="k-picker-wrap k-state-default"><input id="field35" type="text" class="form-control k-input" data-role="date" role="textbox" aria-haspopup="true" aria-expanded="false" aria-owns="field35_dateview" aria-disabled="false" aria-readonly="false" aria-label="Current focused date is null" data-error-container="#errfield35" style="width: 100%;" required="required" name="Reporting_Date" data-parsley-errors-container="#errId1"><span unselectable="on" class="k-select" role="button" aria-controls="field35_dateview"><span unselectable="on" class="k-icon k-i-calendar">select</span></span></span></span><span id="errId1" class="error"></span></div>
                 
 		</div></div><div class="col-md-6"><div class="form-group">
 			    <label class="control-label control-label-left col-sm-3" for="field37">Reporting Time<span class="req"> *</span></label>
 			    <div class="controls col-sm-9">
                     
-                <span class="k-widget k-timepicker k-header form-control"><span class="k-picker-wrap k-state-default"><input id="field37" type="text" class="form-control k-input" data-role="time" role="textbox" aria-haspopup="true" aria-expanded="false" aria-owns="field37_timeview" aria-disabled="false" aria-readonly="false" data-error-container="#errfield37" style="width: 100%;" required="required" name="rtime" data-parsley-errors-container="#errId2"><span unselectable="on" class="k-select" role="button" aria-controls="field37_timeview"><span unselectable="on" class="k-icon k-i-clock">select</span></span></span></span><span id="errId2" class="error"></span></div>
+                <span class="k-widget k-timepicker k-header form-control"><span class="k-picker-wrap k-state-default"><input id="field37" type="text" class="form-control k-input" data-role="time" role="textbox" aria-haspopup="true" aria-expanded="false" aria-owns="field37_timeview" aria-disabled="false" aria-readonly="false" data-error-container="#errfield37" style="width: 100%;" required="required" name="Reporting_Time" data-parsley-errors-container="#errId2"><span unselectable="on" class="k-select" role="button" aria-controls="field37_timeview"><span unselectable="on" class="k-icon k-i-clock">select</span></span></span></span><span id="errId2" class="error"></span></div>
                 
 		</div></div></div><div class="row"><div class="col-md-6"><div class="form-group">
 			    <label class="control-label control-label-left col-sm-3" for="field36">Incident Date<span class="req"> *</span></label>
 			    <div class="controls col-sm-9">
                     
-                <span class="k-widget k-datepicker k-header form-control"><span class="k-picker-wrap k-state-default"><input id="field36" type="text" class="form-control k-input" data-role="date" role="textbox" aria-haspopup="true" aria-expanded="false" aria-owns="field36_dateview" aria-disabled="false" aria-readonly="false" aria-label="Current focused date is null" data-error-container="#errfield36" style="width: 100%;" required="required" name="idate" data-parsley-errors-container="#errId3"><span unselectable="on" class="k-select" role="button" aria-controls="field36_dateview"><span unselectable="on" class="k-icon k-i-calendar">select</span></span></span></span><span id="errId3" class="error"></span></div>
+                <span class="k-widget k-datepicker k-header form-control"><span class="k-picker-wrap k-state-default"><input id="field36" type="text" class="form-control k-input" data-role="date" role="textbox" aria-haspopup="true" aria-expanded="false" aria-owns="field36_dateview" aria-disabled="false" aria-readonly="false" aria-label="Current focused date is null" data-error-container="#errfield36" style="width: 100%;" required="required" name="Incident_Date" data-parsley-errors-container="#errId3"><span unselectable="on" class="k-select" role="button" aria-controls="field36_dateview"><span unselectable="on" class="k-icon k-i-calendar">select</span></span></span></span><span id="errId3" class="error"></span></div>
                 
 		</div></div><div class="col-md-6"><div class="form-group">
 			    <label class="control-label control-label-left col-sm-3" for="field38">Incident Time<span class="req"> *</span></label>
 			    <div class="controls col-sm-9">
                     
-                <span class="k-widget k-timepicker k-header form-control"><span class="k-picker-wrap k-state-default"><input id="field38" type="text" class="form-control k-input" data-role="time" role="textbox" aria-haspopup="true" aria-expanded="false" aria-owns="field38_timeview" aria-disabled="false" aria-readonly="false" data-error-container="#errfield38" style="width: 100%;" required="required" name="itime" data-parsley-errors-container="#errId4"><span unselectable="on" class="k-select" role="button" aria-controls="field38_timeview"><span unselectable="on" class="k-icon k-i-clock">select</span></span></span></span><span id="errId4" class="error"></span></div>
+                <span class="k-widget k-timepicker k-header form-control"><span class="k-picker-wrap k-state-default"><input id="field38" type="text" class="form-control k-input" data-role="time" role="textbox" aria-haspopup="true" aria-expanded="false" aria-owns="field38_timeview" aria-disabled="false" aria-readonly="false" data-error-container="#errfield38" style="width: 100%;" required="required" name="Incident_Time" data-parsley-errors-container="#errId4"><span unselectable="on" class="k-select" role="button" aria-controls="field38_timeview"><span unselectable="on" class="k-icon k-i-clock">select</span></span></span></span><span id="errId4" class="error"></span></div>
                 
 		</div></div></div><div class="form-group">
 			    <label class="control-label control-label-left col-sm-3" for="field34">Incident report issued by<span class="req"> *</span></label>
 			    <div class="controls col-sm-9">
                     
-                <input id="field34" type="name" class="form-control k-textbox" data-role="text" required="true" name="name" data-parsley-errors-container="#errId5"><span id="errId5" class="error"></span></div>
+                <input id="field34" type="text" class="form-control k-textbox" data-role="text" required="true" name="Name" data-parsley-errors-container="#errId5"><span id="errId5" class="error"></span></div>
                 
 		</div><div class="form-group">
 			    <label class="control-label control-label-left col-sm-3" for="field33">Topic<span class="req"> *</span></label>
 			    <div class="controls col-sm-9">
                     
-                <select id="field33" class="form-control" data-role="select" required="required" name="topic" data-parsley-errors-container="#errId6">
+                <select id="field33" class="form-control" data-role="select" required="required" name="Topic" data-parsley-errors-container="#errId6">
 		  <option value="">  </option>
             <option value="Accident"> Accident </option>
             <option value="Child Labour"> Child Labour </option>
@@ -128,55 +184,55 @@ function test_input($data) {
 			    <label class="control-label control-label-left col-sm-3" for="field32">Incident Location (Please provide specific details)</label>
 			    <div class="controls col-sm-9">
                     
-                <textarea id="field32" rows="3" class="form-control k-textbox" data-role="textarea" name="location" data-parsley-errors-container="#errId7"></textarea><span id="errId7" class="error"></span></div>
+                <textarea id="field32" rows="3" class="form-control k-textbox" data-role="textarea" name="Location" data-parsley-errors-container="#errId7"></textarea><span id="errId7" class="error"></span></div>
                 
 		</div><div class="form-group">
 			    <label class="control-label control-label-left col-sm-3" for="field31">Nature of incident</label>
 			    <div class="controls col-sm-9">
                     
-                <textarea id="field31" rows="3" class="form-control k-textbox" data-role="textarea" name="nature" data-parsley-errors-container="#errId8"></textarea><span id="errId8" class="error"></span></div>
+                <textarea id="field31" rows="3" class="form-control k-textbox" data-role="textarea" name="Nature_of_Incident" data-parsley-errors-container="#errId8"></textarea><span id="errId8" class="error"></span></div>
                 
 		</div><div class="form-group">
 			    <label class="control-label control-label-left col-sm-3" for="field30">Incident details</label>
 			    <div class="controls col-sm-9">
                     
-                <textarea id="field30" rows="3" class="form-control k-textbox" data-role="textarea" name="details" data-parsley-errors-container="#errId9"></textarea><span id="errId9" class="error"></span></div>
+                <textarea id="field30" rows="3" class="form-control k-textbox" data-role="textarea" name="Details_of_Incident" data-parsley-errors-container="#errId9"></textarea><span id="errId9" class="error"></span></div>
                 
 		</div><div class="form-group">
 			    <label class="control-label control-label-left col-sm-3" for="field29">What motivated the incident?</label>
 			    <div class="controls col-sm-9">
                     
-                <textarea id="field29" rows="3" class="form-control k-textbox" data-role="textarea" name="motive" data-parsley-errors-container="#errId10"></textarea><span id="errId10" class="error"></span></div>
+                <textarea id="field29" rows="3" class="form-control k-textbox" data-role="textarea" name="Motive_of_Incident" data-parsley-errors-container="#errId10"></textarea><span id="errId10" class="error"></span></div>
                 
 		</div><div class="form-group">
 			    <label class="control-label control-label-left col-sm-3" for="field28">Was a report of the incident issued to the police? </label>
 			    <div class="controls col-sm-9">
                     
-                <textarea id="field28" rows="3" class="form-control k-textbox" data-role="textarea" name="issue" data-parsley-errors-container="#errId11"></textarea><span id="errId11" class="error"></span></div>
+                <textarea id="field28" rows="3" class="form-control k-textbox" data-role="textarea" name="Previous_Issue" data-parsley-errors-container="#errId11"></textarea><span id="errId11" class="error"></span></div>
                 
 		</div><div class="form-group">
 			    <label class="control-label control-label-left col-sm-3" for="field26">Full Name</label>
 			    <div class="controls col-sm-9">
                     
-                <input id="field26" type="text" class="form-control k-textbox" data-role="text" name="fname" data-parsley-errors-container="#errId12"><span id="errId12" class="error"></span></div>
+                <input id="field26" type="text" class="form-control k-textbox" data-role="text" name="Full_Name" data-parsley-errors-container="#errId12"><span id="errId12" class="error"></span></div>
                 
 		</div><div class="form-group">
 			    <label class="control-label control-label-left col-sm-3" for="field25">Phone Number</label>
 			    <div class="controls col-sm-9">
                     
-                <input id="field25" type="Number" class="form-control k-textbox" data-role="text" name="phn" data-parsley-errors-container="#errId13"><span id="errId13" class="error"></span></div>
+                <input id="field25" type="Number" class="form-control k-textbox" data-role="text" name="Phone_no." data-parsley-errors-container="#errId13"><span id="errId13" class="error"></span></div>
                 
 		</div><div class="form-group">
 			    <label class="control-label control-label-left col-sm-3" for="field23">Mobile Number<span class="req"> *</span></label>
 			    <div class="controls col-sm-9">
                     
-                <input id="field23" type="Number" class="form-control k-textbox" data-role="text" name="mobile" required="required" data-parsley-errors-container="#errId14"><span id="errId14" class="error"></span></div>
+                <input id="field23" type="Number" class="form-control k-textbox" data-role="text" name="Mobile" required="required" data-parsley-errors-container="#errId14"><span id="errId14" class="error"></span></div>
                 
 		</div><div class="form-group">
 			    <label class="control-label control-label-left col-sm-3" for="field24">Email<span class="req"> *</span></label>
 			    <div class="controls col-sm-9">
                     
-                <input id="field24" type="email" class="form-control k-textbox" data-role="text" required="required" name="email" placeholder="example@abc.com" data-parsley-errors-container="#errId15"><span id="errId15" class="error"></span></div>
+                <input id="field24" type="email" class="form-control k-textbox" data-role="text" required="required" name="Email" placeholder="example@abc.com" data-parsley-errors-container="#errId15"><span id="errId15" class="error"></span></div>
                 
 		</div><div id="panel17" class="panel panel-default" data-role="panel">
         <div class="panel-heading">Address</div>
@@ -186,25 +242,25 @@ function test_input($data) {
 			    <label class="control-label-left" for="field18">Street address 1<span class="req"> *</span></label>
 			    <div class="controls">
                     
-                <input id="field18" type="text" class="form-control k-textbox" data-role="text" required="required" name="sa1" data-parsley-errors-container="#errId16"><span id="errId16" class="error"></span></div>
+                <input id="field18" type="text" class="form-control k-textbox" data-role="text" required="required" name="Street_Address_1" data-parsley-errors-container="#errId16"><span id="errId16" class="error"></span></div>
                 
 		</div><div class="form-group">
 			    <label class="control-label-left" for="field19">Street address 2<span class="req"> *</span></label>
 			    <div class="controls">
                     
-                <input id="field19" type="text" class="form-control k-textbox" data-role="text" required="required" name="sa2" data-parsley-errors-container="#errId17"><span id="errId17" class="error"></span></div>
+                <input id="field19" type="text" class="form-control k-textbox" data-role="text" required="required" name="Street_Address_2" data-parsley-errors-container="#errId17"><span id="errId17" class="error"></span></div>
                 
 		</div><div class="row"><div class="col-md-6"><div class="form-group">
 			    <label class="control-label control-label-left col-sm-3" for="field20">City<span class="req"> *</span></label>
 			    <div class="controls col-sm-9">
                     
-                <input id="field20" type="text" class="form-control k-textbox" data-role="text" name="city" required="required" data-parsley-errors-container="#errId18"><span id="errId18" class="error"></span></div>
+                <input id="field20" type="text" class="form-control k-textbox" data-role="text" name="City" required="required" data-parsley-errors-container="#errId18"><span id="errId18" class="error"></span></div>
                 
 		</div></div><div class="col-md-6"><div class="form-group">
 			    <label class="control-label control-label-left col-sm-3" for="field21">State</label>
 			    <div class="controls col-sm-9">
                     
-                <select id="field21" class="form-control" data-role="select" name="state" selected="selected" data-parsley-errors-container="#errId19">		
+                <select id="field21" class="form-control" data-role="select" name="State" selected="selected" data-parsley-errors-container="#errId19">		
 		  
 		  
 		  
@@ -246,7 +302,7 @@ function test_input($data) {
 			    <label class="control-label control-label-left col-sm-3" for="field22">Zip Code<span class="req"> *</span></label>
 			    <div class="controls col-sm-9">
                     
-                <input id="field22" type="text" class="form-control k-textbox" data-role="text" required="required" name="zip" data-parsley-errors-container="#errId20"><span id="errId20" class="error"></span></div>
+                <input id="field22" type="Number" class="form-control k-textbox" data-role="text" required="required" name="Zip_Code" data-parsley-errors-container="#errId20"><span id="errId20" class="error"></span></div>
                 
 		</div></div>
     <div class="panel-toolbar"><span class="glyphicon glyphicon-cog"></span></div></div><div class="form-group" style="display: block;">
@@ -259,7 +315,7 @@ function test_input($data) {
 			    <label class="control-label control-label-left col-sm-3" for="field11">Further Comments</label>
 			    <div class="controls col-sm-9">
                     
-                <textarea id="field11" rows="3" class="form-control k-textbox" data-role="textarea" name="comment" data-parsley-errors-container="#errId22"></textarea><span id="errId22" class="error"></span></div>
+                <textarea id="field11" rows="3" class="form-control k-textbox" data-role="textarea" name="Comments" data-parsley-errors-container="#errId22"></textarea><span id="errId22" class="error"></span></div>
                 
 		</div><div class="form-group">
 			    <label class="control-label control-label-left col-sm-3"><span class="req"> *</span></label>
@@ -281,18 +337,6 @@ function test_input($data) {
             </form>
         </div>
     </div>
-    <?php
-echo "<h2>Your Input:</h2>";
-echo $name;
-echo "<br>";
-echo $email;
-echo "<br>";
-echo $website;
-echo "<br>";
-echo $comment;
-echo "<br>";
-echo $gender;
-?>
     
 
 
