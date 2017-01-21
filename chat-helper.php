@@ -2,14 +2,14 @@
   $user='abhishek';
   $password='abd';
   $host="localhost";
-  $db="chatbox";
+  $db="cms";
  $con= mysqli_connect($host,$user,$password,$db) or die();
- 
- 
+echo 'vuiug';
 $t=time();
-$user=$_POST["user"];
-$msg=$_POST["msg"];
-$query=" INSERT INTO `chatbox`.`chat` (`id`, `msg`, `sender_id`, `time`) VALUES (NULL, '$msg', '$user', '$t')";
+$user_id=$_POST["user_id"];
+$complain_hash=$_POST["complain_hash"];
+$content=$_POST["content"];
+$query=" INSERT INTO `cms`.`chat` (`id`, `content`, `user_id`,`complain_hash`, `timestamp`) VALUES (NULL, '$content', '$user_id','$complain_hash','$t')";
 $query_run=mysqli_query($con,$query);
 
 

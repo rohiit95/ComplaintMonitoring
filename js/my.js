@@ -41,7 +41,7 @@ var str;
 		  $('#homeli').addClass("active");
 	  }
 	  
-	  //the subscribe function
+	  //the myprofile function
 	  $("#myprofileli").click(function(event){
 		  event.preventDefault();
 		 $('.distance').addClass('hide');
@@ -54,6 +54,37 @@ var str;
 		   
 		 window.location="profile.php"+pstr;
 	  });
+	  //loading profile
+	  	 	 $.getJSON('profile-loader.php',{user_id:str},function (json) {
+		 		$('#detailsprofile h2').text(json.name);
+				$("#detailsprofile h4").text(json.address);
+				$('#detailsprofile p:first').text(json.adhar);
+				$('#detailsprofile p:last').text(json.contact);
+				alert(str);
+               $('#prof1 img').attr("src","img/profile/"+str+"."+"jpg");
+			   	
+		 });
+
+
+var htmlprofile= " <div role='header' class='complain'><div class='left'><h3></h3></div><div class='right'>Complaint No :<span class='id'>  </span><br />Date :<span class='date'></span></div></div><div role='content' class='content'><span style='font-weight:bold'>Location :   </span><span class='location'></span><br /><br /><h5 style='font-weight:bold; font-size:1.2em; '>Description : </h5><p class='describe'></p><div class='connect'><button class='chat' value=''>Chat with Officer</button><button class='call'>Video-Call Officer</button></div></div>";
+
+	  	 	 $.getJSON('profile-loader2.php',{user_id:str},function (json) {
+            	 var len=json.length-1; 
+				 alert(json[1].heading);
+	             for(i=1;i<=len;i++){
+					 $('.accordi:last').append(htmlprofile);
+					 $(".left h3:last").text(json[i].heading);
+				$('.id :last').text(json[i].complain_hash);
+				$('.date :last').text(json[i].timestamp);
+				$('.describe:last').text(json[i].description);
+				$('.location:last').text(json[i].location);
+				 }
+			   	
+		 });
+
+
+	  
+	  
 	  
 	  
 	  //the update function

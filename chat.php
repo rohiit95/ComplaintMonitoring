@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Untitled Document</title>
-	      
+	<link href="my.css" rel="stylesheet">
         <link href="css/bootstrap.css" rel="stylesheet">
 </head>
 
@@ -15,19 +15,18 @@
             <div class="panel panel-primary">
                 <div class="panel-heading" id="accordion">
                     <span class="glyphicon glyphicon-comment"></span> Chat
-                    <div class="btn-group">
+                    <div class="btn-group pull-right">
                         <a type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
                             <span class="glyphicon glyphicon-chevron-down"></span>
                         </a>
                     </div>
-                    <button  id="Xx">X</button>
                 </div>
             <div class="panel-collapse collapse" id="collapseOne">
                 <div class="panel-body">
                     <ul class="chat">
                     
                         <li class="left clearfix " id="firstchat">
-                            <div class="chat-body clearfix">
+                            <div class="chat-body clearfix hide">
                                 <div class="header">
                                     <strong class="primary-font">Jack Sparrow</strong> <small class="pull-right text-muted">
                                 </div>
@@ -61,3 +60,4 @@
 
 </body>
 </html>
+

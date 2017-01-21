@@ -31,8 +31,7 @@ session_start();
         color: #303030;
       }
       #address {
-        border: 1px solid #000090;
-        background-color: #f0f0ff;
+
         width: 480px;
         padding-right: 2px;
       }
@@ -40,7 +39,7 @@ session_start();
         font-size: 10pt;
       }
       .field {
-        width: 99%;
+        width: 90%;
       }
       .slimField {
         width: 80px;
@@ -50,7 +49,9 @@ session_start();
       }
       #locationField {
         height: 20px;
-        margin-bottom: 2px;
+        margin-bottom: 50px;
+		text-align:center;
+		padding-left:10px;
       }
     </style>
 
@@ -170,7 +171,7 @@ session_start();
         <td class="wideField" colspan="2"><input class="field" id="route"
               disabled="true"></input></td>
       </tr>
-      <tr>
+      <tr class="hide">
         <td class="label">City</td>
         <!-- Note: Selection of address components in this example is typical.
              You may need to adjust it for the locations relevant to your app. See
@@ -179,7 +180,7 @@ session_start();
         <td class="wideField" colspan="3"><input class="field" id="locality"
               disabled="true"></input></td>
       </tr>
-      <tr>
+      <tr class="hide">
         <td class="label">State</td>
         <td class="slimField"><input class="field"
               id="administrative_area_level_1" disabled="true"></input></td>
@@ -204,7 +205,7 @@ session_start();
 						<figcaption>
 							<h3>Garia</h3>
 							<span>Garia</span>
-							<a  class="clubicons" value="garia" href="club.php">Take a look</a>
+							<a  class="clubicons" value="garia" href="police_station.php">Take a look</a>
 						</figcaption>
 					</figure>
 	        	</div>	
@@ -216,7 +217,7 @@ session_start();
 						<figcaption>
 							<h3>Jadavpur</h3>
 							<span>Jadavpur</span>
-							<a  class="clubicons" value="jadavpur" href="club.php">Take a look</a>
+							<a  class="clubicons" value="jadavpur" href="police_station.php">Take a look</a>
 						</figcaption>
 					</figure>
 				</div>
@@ -227,7 +228,7 @@ session_start();
 						<figcaption>
 							<h3>Shyampukur</h3>
 							<span>Shyampukur</span>
-							<a  class="clubicons" value="shyampukur" href="club.php">Take a look</a>
+							<a  class="clubicons" value="shyampukur" href="police_station.php">Take a look</a>
 						</figcaption>
 					</figure>
 				</div>
@@ -239,7 +240,7 @@ session_start();
 						<figcaption>
 							<h3>Jorabagan</h3>
 							<span>Jorabagan</span>
-							<a  class="clubicons" value="jorabagan" href="club.php">Take a look</a>
+							<a  class="clubicons" value="jorabagan" href="police_station.php">Take a look</a>
 						</figcaption>
 					</figure>
 				</div>
@@ -251,7 +252,7 @@ session_start();
 						<figcaption>
 							<h3>Amherst</h3>
 							<span>Amherst</span>
-							<a  class="clubicons" value="amherst" href="club.php">Take a look</a>
+							<a  class="clubicons" value="amherst" href="police_station.php">Take a look</a>
 						</figcaption>
 					</figure>
 				</div>
@@ -263,7 +264,7 @@ session_start();
 						<figcaption>
 							<h3>Gariahat</h3>
 							<span>Gariahat</span>
-							<a  class="clubicons" value="gariahat" href="club.php">Take a look</a>
+							<a  class="clubicons" value="gariahat" href="police_station.php">Take a look</a>
 						</figcaption>
 					</figure>
 				</div>
