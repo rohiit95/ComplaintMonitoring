@@ -59,7 +59,7 @@ session_start();
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>CMS-HOME</title>
+    <title>CMS_HOME</title>
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
     <!-- CSS -->
