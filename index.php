@@ -162,13 +162,13 @@ session_start();
               disabled="true"></input></td>
       </tr>
       <tr>
-        <td class="label">City</td>
+        <td class="label" >City</td>
         <!-- Note: Selection of address components in this example is typical.
              You may need to adjust it for the locations relevant to your app. See
              https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete-addressform
         -->
-        <td class="wideField" colspan="3"><input class="field" id="locality"
-              disabled="true"></input></td>
+        <td class="wideField" colspan="3"><input value="" class="field" id="locality"
+              ></input></td>
       </tr>
       <tr>
         <td class="label">State</td>
@@ -177,6 +177,7 @@ session_start();
         <td class="label">Zip code</td>
         <td class="wideField"><input class="field" id="postal_code"
               disabled="true"></input></td>
+              
       </tr>
       <tr class="hide">
         <td class="label">Country</td>
@@ -205,9 +206,11 @@ session_start();
         
 		
 			<ul class="grid cs-style-3">
+            
+            <div id="coverhai" class="">
 	        	<div class="col-md-3 col-md-4 col-sm-6">
-					<figure>
-						<img src="img/station/garia.jpg" alt="img04" height="168" width="300">
+					<figure id="figure1">
+						<img src="img/station/0.jpg" alt="img04" height="168" width="300">
 						<figcaption>
 							<h3>Garia</h3>
 							<span>Garia</span>
@@ -218,8 +221,8 @@ session_start();
                 
                 
 				<div class=" col-md-3 col-md-4 col-sm-6">
-					<figure>
-						<img src="img/station/jadavpur.jpg" alt="img01" height="168" width="300">
+					<figure id="figure2">
+						<img src="img/station/1.jpg" alt="img01" height="168" width="300">
 						<figcaption>
 							<h3>Jadavpur</h3>
 							<span>Jadavpur</span>
@@ -229,20 +232,20 @@ session_start();
 				</div>
                 
                 <div class="col-md-3 col-md-4 col-sm-6">
-					<figure>
-						<img src="img/station/shyampukur.jpg" alt="img06" height="168" width="300">
+					<figure id="figure3">
+						<img src="img/station/2.jpg" alt="img06" height="168" width="300">
 						<figcaption>
-							<h3>Shyampukur</h3>
-							<span>Shyampukur</span>
-							<a  class="clubicons" value="shyampukur" href="police_station.php">Take a look</a>
+							<h3>Dwarka</h3>
+							<span>Dwarka</span>
+							<a  class="clubicons" value="Dwarka" href="police_station.php">Take a look</a>
 						</figcaption>
 					</figure>
 				</div>
                 
                 
                 <div class=" col-md-3 col-md-4 col-sm-6">
-					<figure>
-						<img src="img/station/jorabagan.jpg" alt="img01" height="168" width="300">
+					<figure id="figure4">
+						<img src="img/station/3.jpg" alt="img01" height="168" width="300">
 						<figcaption>
 							<h3>Jorabagan</h3>
 							<span>Jorabagan</span>
@@ -253,9 +256,9 @@ session_start();
                 
                 
                 <div class=" col-md-3 col-md-4 col-sm-6">
-					<figure>
-						<img src="img/station/amherst.jpg" alt="img01" height="168" width="300">
-						<figcaption>
+					<figure id="figure5">
+						<img src="img/station/4.jpg" alt="img01" height="168" width="300">
+						<figcaption >
 							<h3>Amherst</h3>
 							<span>Amherst</span>
 							<a  class="clubicons" value="amherst" href="police_station.php">Take a look</a>
@@ -265,7 +268,39 @@ session_start();
                 
                 
 				<div class=" col-md-3 col-md-4 col-sm-6">
-					<figure>
+					<figure id="figure6">
+						<img src="img/station/5.jpg" alt="img02" height="168" width="300">
+						<figcaption>
+							<h3>Gariahat</h3>
+							<span>Gariahat</span>
+							<a  class="clubicons" value="gariahat" href="police_station.php">Take a look</a>
+						</figcaption>
+					</figure>
+				</div>
+                
+				<div class=" col-md-3 col-md-4 col-sm-6 hide">
+					<figure id="figure7">
+						<img src="img/station/6.jpg" alt="img02" height="168" width="300">
+						<figcaption>
+							<h3>Gariahat</h3>
+							<span>Gariahat</span>
+							<a  class="clubicons" value="gariahat" href="police_station.php">Take a look</a>
+						</figcaption>
+					</figure>
+				</div>
+                				<div class=" col-md-3 col-md-4 col-sm-6 hide">
+					<figure id="figure8">
+						<img src="img/station/gariahat.jpg" alt="img02" height="168" width="300">
+						<figcaption>
+							<h3>Gariahat</h3>
+							<span>Gariahat</span>
+							<a  class="clubicons" value="gariahat" href="police_station.php">Take a look</a>
+						</figcaption>
+					</figure>
+				</div>
+                
+                                				<div class=" col-md-3 col-md-4 col-sm-6 hide">
+					<figure id="figure9">
 						<img src="img/station/gariahat.jpg" alt="img02" height="168" width="300">
 						<figcaption>
 							<h3>Gariahat</h3>
@@ -276,6 +311,7 @@ session_start();
 				</div>
                 
                 
+               </div>
                 
 			</ul>
 	        	</div>
@@ -295,6 +331,7 @@ session_start();
 	 <script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>	
 		<!-- my jquery file -->
 	 <script src="js/my.js"></script>	
+     <script src="js/my4.js"></script>
      
          <script>
       // This example displays an address form, using the autocomplete feature

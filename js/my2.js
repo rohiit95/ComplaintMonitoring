@@ -4,7 +4,7 @@ $(document).ready(function(){
 	var urlhash=$(location).attr('hash');
 	var temphash=urlhash.substr(urlhash.indexOf("#")+1,urlhash.length);
 	hash=temphash;
-	alert(hash);
+	//alert(hash);
 	$('#header h1').text(hash);
 	   var jstar;
 	   //to load page 2;
@@ -19,7 +19,7 @@ $(document).ready(function(){
 		$("#aid").text(json.address);
 		$("#phid").text(json.phno);
 		jstar=json.star;
-		alert(jstar);
+		//alert(jstar);
 		getstar();
 												
 	 });	
