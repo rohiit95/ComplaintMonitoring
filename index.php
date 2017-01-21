@@ -31,7 +31,6 @@ session_start();
         color: #303030;
       }
       #address {
-        border: 1px solid #000090;
         background-color: #f0f0ff;
         width: 480px;
         padding-right: 2px;
@@ -153,16 +152,16 @@ session_start();
                 
 	
 				<div class="section-title col-lg-6 col-md-6" style="margin-top:30px;" align="center" >
-				<h1>BEST PERFORMER</h1>
-                <h3 style="margin-top:20px;">enter your location </h3>
+				<h1>BEST PERFORMERS</h1>
+                <h3 style="margin-top:20px;">Enter Your Location </h3>
                 <h3></h3>
                 
                     <div id="locationField">
-      <input id="autocomplete" placeholder="Enter your LOCALITY"
+      <input id="autocomplete" placeholder="Enter your Location"
              onFocus="geolocate()" type="text"></input>
     </div>
 
-    <table id="address">
+    <table id="address" class="hide">
       <tr class="hide">
         <td class="label">Street address</td>
         <td class="slimField"><input class="field" id="street_number"
@@ -204,7 +203,7 @@ session_start();
 						<figcaption>
 							<h3>Garia</h3>
 							<span>Garia</span>
-							<a  class="clubicons" value="garia" href="club.php">Take a look</a>
+							<a  class="clubicons" value="garia" href="police_station.php">Take a look</a>
 						</figcaption>
 					</figure>
 	        	</div>	
@@ -216,7 +215,7 @@ session_start();
 						<figcaption>
 							<h3>Jadavpur</h3>
 							<span>Jadavpur</span>
-							<a  class="clubicons" value="jadavpur" href="club.php">Take a look</a>
+							<a  class="clubicons" value="jadavpur" href="police_station.php">Take a look</a>
 						</figcaption>
 					</figure>
 				</div>
@@ -227,7 +226,7 @@ session_start();
 						<figcaption>
 							<h3>Shyampukur</h3>
 							<span>Shyampukur</span>
-							<a  class="clubicons" value="shyampukur" href="club.php">Take a look</a>
+							<a  class="clubicons" value="shyampukur" href="police_station.php">Take a look</a>
 						</figcaption>
 					</figure>
 				</div>
@@ -239,7 +238,7 @@ session_start();
 						<figcaption>
 							<h3>Jorabagan</h3>
 							<span>Jorabagan</span>
-							<a  class="clubicons" value="jorabagan" href="club.php">Take a look</a>
+							<a  class="clubicons" value="jorabagan" href="police_station.php">Take a look</a>
 						</figcaption>
 					</figure>
 				</div>
@@ -251,7 +250,7 @@ session_start();
 						<figcaption>
 							<h3>Amherst</h3>
 							<span>Amherst</span>
-							<a  class="clubicons" value="amherst" href="club.php">Take a look</a>
+							<a  class="clubicons" value="amherst" href="police_station.php">Take a look</a>
 						</figcaption>
 					</figure>
 				</div>
@@ -263,7 +262,7 @@ session_start();
 						<figcaption>
 							<h3>Gariahat</h3>
 							<span>Gariahat</span>
-							<a  class="clubicons" value="gariahat" href="club.php">Take a look</a>
+							<a  class="clubicons" value="gariahat" href="police_station.php">Take a look</a>
 						</figcaption>
 					</figure>
 				</div>
