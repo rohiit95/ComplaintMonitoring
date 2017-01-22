@@ -66,6 +66,9 @@ require("header-logged.php");
                         <br /><br />
                         <h5 style="font-weight:bold; font-size:1.2em;   ">Description : </h5>
                         <p class="describe">I lost my Sansung Galaxy Note 3. The EMEI no was EDJEF5W65HJ.  </p>
+                        <br /><h5 style='font-weight:bold; font-size:1.2em; '>Status : </h5><p class='recent_status'>this is recent status given by authorities...already processed</p>
+                        <a href="reports/ITBYA_209.pdf" target="_blank"><button class="pdf" >Download Fir</button></a>
+                        <a href="vedio.php" target="_blank"><button class="pdf" >Vedio Chat With Officer</button></a>
                         
                   </div>
                   

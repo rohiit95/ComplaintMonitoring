@@ -21,8 +21,7 @@
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <!-- Fav and touch icons -->
-    <script async src="https://s.tagove.com/a-07e59/init.js"></script>
-            <script async src="https://s.tagove.com/main.js"></script>
+    
 </head>
 
 

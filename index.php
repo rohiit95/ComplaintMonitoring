@@ -72,8 +72,7 @@ session_start();
 	
 
 	
-<script async src="https://s.tagove.com/a-07e59/init.js"></script>
-            <script async src="https://s.tagove.com/main.js"></script>
+
 </head>
 
     <body>
