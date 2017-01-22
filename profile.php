@@ -1,3 +1,4 @@
+
 <html>
     <head>
         <title>UserName</title>
@@ -20,8 +21,10 @@
         <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
         <script src="js/addAccordion.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        
+ <script async src="https://s.tagove.com/a-07e59/init.js"></script>
+            <script async src="https://s.tagove.com/main.js"></script>       
     </head>
+    
     <body>
         <?php
 require("header-logged.php");
@@ -63,7 +66,7 @@ require("header-logged.php");
                         <br /><br />
                         <h5 style="font-weight:bold; font-size:1.2em;   ">Description : </h5>
                         <p class="describe">I lost my Sansung Galaxy Note 3. The EMEI no was EDJEF5W65HJ.  </p>
-                        <div class="connect"><a href="chat.php" target="blank"><button  class="chat" value="">Chat with Officer</button></a><a href="video.php" target="blank"><button class="call">Video-Call Officer</button></a></div> 
+                        
                   </div>
                   
                   

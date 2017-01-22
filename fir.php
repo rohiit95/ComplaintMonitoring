@@ -21,8 +21,10 @@
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <!-- Fav and touch icons -->
-    
+    <script async src="https://s.tagove.com/a-07e59/init.js"></script>
+            <script async src="https://s.tagove.com/main.js"></script>
 </head>
+
 
 <body>
 
@@ -61,25 +63,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 $path_to_file = 'reports/'.(string)$num.'.pdf';
 $pdf->Output($path_to_file,'F');
+	$user_id = "abhi";
+	
   $name = test_input($_POST["Name"]);
   $mobile = $_POST["Mobile"];
   $rdate = $_POST["Reporting_Date"];
   $idate = $_POST["Incident_Date"];
   $email = test_input($_POST["Email"]);
-  $servername = "localhost";
+  $servername = 'localhost';
   $topic=$_POST['Topic'];
   $location=$_POST['Location'];
-$username = "root";
-$password = "";
-$dbname = "complaint_monitor";
+  $user='abhishek';
+  $password='abd';
+$dbname = "cms";
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($servername, $user, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 $data = $conn->real_escape_string(file_get_contents($path_to_file));
-$sql = "INSERT INTO complaint (Complaint_ID,Category,Reporting_Date,Incident_Date,Location,Name,Mobile_Number,Email,Report)
-VALUES ('$num','$topic',STR_TO_DATE('$rdate', '%m/%d/%Y'),STR_TO_DATE('$idate', '%m/%d/%Y'),'$location','$name',$mobile,'$email','$data')";
+$sql = "INSERT INTO `cms`.`complain` (`id`,`user_id`,`complaint_hash`,`heading`,`timestamp`,`location`)
+VALUES (NULL,'$user_id','$num','$topic','strtotime('$idate', '%m/%d/%Y')','$location')";
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
 } else {
