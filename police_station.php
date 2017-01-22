@@ -25,10 +25,6 @@
 			<td id="aid">  </td> 
 		<tr>
 		<tr> 
-			<td> Division </td> 
-			<td> South East Division </td> 
-		<tr>
-		<tr> 
 			<td> Officer In Charge </td> 
 			<td id="inid">  </td> 
 		<tr>
